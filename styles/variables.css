@@ -2,3 +2,45 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
+:root {
+  --background-image: url(../images/cover-image-dark.png);
+  --background-color: #000028;
+  --main-font: IBM Plex mono;
+  --header-color: #db00ff;
+  --main-color: #ff0070;
+  --shadow-color: #ff0070;
+  --menu-color: #ff0070;
+  --text-color: #f1b2ce;
+  --title-block-color: #000028;
+  --title-text-block: #ff0070;
+  --button-hover-outline: #ff0070;
+  --decorated-zone: #ff0070;
+}
+
+@media (prefers-color-scheme: light) {
+  .theme_auto {
+    --background-image: url(../images/cover-image-light.png);
+    --background-color: rgba(255, 241, 247, 1);
+    --main-font: IBM Plex mono;
+    --header-color: #ffc2e6;
+    --main-color: #ff8dcb;
+    --shadow-color: #ff8dcb;
+    --menu-color: #353430;
+    --text-color: #353430;
+    --title-block-color: #353430;
+    --title-text-block: #353430;
+    --button-hover-outline: #353430;
+    --decorated-zone: #353430;
+  }
+
+  .theme_auto .visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
