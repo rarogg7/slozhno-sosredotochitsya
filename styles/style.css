@@ -10,7 +10,6 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-attachment: fixed;
-  background-color: var(--background-color);
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
@@ -613,11 +612,6 @@
   .block_why {
     grid-template-columns: 1fr;
     display: grid;
-  }
-
-  .text__area-why {
-    display: grid;
-    grid-template-columns: 1fr;
   }
 
   .text__area-why {
