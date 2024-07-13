@@ -24,7 +24,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-  .page.theme_light {
+  .page {
     --background-image: url(../images/cover-image-light.png);
     --background-color: rgba(255, 241, 247, 1);
     --main-font: IBM Plex mono;
