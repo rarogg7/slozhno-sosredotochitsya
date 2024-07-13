@@ -15,7 +15,7 @@
   --text-color: #353430;
   --title-block-color: #353430;
   --title-text-block: #353430;
-  --button-hover-outline: rgba(50, 49, 45, 0.4);
+  --button-hover-outline: #353430;
   --decorated-zone: #353430;
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
@@ -23,83 +23,8 @@
   */
 }
 
-.cover {
-  color: var(--header-color);
-  text-shadow: 4px 4px var(--shadow-color);
-}
-
-.title__text-block {
-  color: var(--title-text-block);
-}
-
-h3 {
-  font-weight: 700;
-}
-
-p {
-  color: var(--text-color);
-}
-
-.gallery h2 {
-  color: var(--bg-color);
-}
-
-.container h2 {
-  color: var(--bg-color);
-}
-
-.cover__description-text {
-  background-color: var(--main-color);
-  color: var(--title-block-color);
-}
-
-.header__theme-menu-button {
-  color: var(--menu-color);
-}
-
-.title__content-block {
-  color: var(--title-block-color);
-}
-
-.title__content-text-block {
-  color: var(--title-block-color);
-}
-
-.header__theme-menu-button:hover {
-  outline: 1px solid var(--button-hover-outline);
-}
-
-.header__theme-menu-button:focus {
-  outline: none;
-  border-bottom: 1px solid var(--menu-color);
-}
-
-.header__theme-menu-button_active {
-  outline: 1px solid var(--menu-color);
-}
-
-.title-decor {
-  inline-size: 100%;
-  background-color: var(--main-color);
-}
-
-.cover__footer-title {
-  color: var(--header-color);
-  text-shadow: 2px 2px var(--shadow-color);
-}
-
-.theme_light .visually-hidden {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
 @media (prefers-color-scheme: light) {
-  .theme_light {
+  .page.theme_light {
     --background-image: url(../images/cover-image-light.png);
     --background-color: rgba(255, 241, 247, 1);
     --main-font: IBM Plex mono;
@@ -112,5 +37,9 @@ p {
     --title-text-block: #353430;
     --button-hover-outline: #353430;
     --decorated-zone: #353430;
+  }
+
+  .theme_auto .rec_bulb {
+    display: none;
   }
 }
