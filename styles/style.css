@@ -1,8 +1,6 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  display: grid;
-  place-items: center;
   max-width: 1024px;
   background-image: var(--background-image);
   background-color: var(--background-color);
@@ -10,6 +8,7 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-attachment: fixed;
+  overflow: auto;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
@@ -60,7 +59,7 @@
   outline: 1px solid var(--menu-color);
 }
 
-.header__theme-menu-button:focus {
+.header__theme-menu-button:focus-visible {
   outline: none;
   border-block-end: 1px solid var(--menu-color);
 }
@@ -262,7 +261,7 @@
   border-block-end: 1px solid currentColor;
 }
 
-.link__text-block:focus {
+.link__text-block:focus-visible {
   outline: 1px solid currentColor;
 }
 

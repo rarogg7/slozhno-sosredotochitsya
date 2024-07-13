@@ -4,6 +4,21 @@
   переключая тему
 */
 
+:root.theme-light {
+  --background-image: url(../images/cover-image-light.png);
+  --background-color: rgba(255, 241, 247, 1);
+  --main-font: IBM Plex mono;
+  --header-color: #ffc2e6;
+  --main-color: #ff8dcb;
+  --shadow-color: #ff8dcb;
+  --menu-color: #353430;
+  --text-color: #353430;
+  --title-block-color: #353430;
+  --title-text-block: #353430;
+  --button-hover-outline: #353430;
+  --decorated-zone: #353430;
+}
+
 .page.theme_light {
   --background-image: url(../images/cover-image-light.png);
   --background-color: rgba(255, 241, 247, 1);
@@ -24,7 +39,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-  .page {
+  :root {
     --background-image: url(../images/cover-image-light.png);
     --background-color: rgba(255, 241, 247, 1);
     --main-font: IBM Plex mono;
