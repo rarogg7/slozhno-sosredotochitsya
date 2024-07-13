@@ -14,6 +14,7 @@
   --text-color: #f1b2ce;
   --title-block-color: #000028;
   --title-text-block: #ff0070;
-  --button-hover-outline: #ff0070;
+  --button-hover-outline: rgba(255, 0, 112, 0.4);
   --decorated-zone: #ff0070;
+  --reset-column: grid-column: initial;
 }

@@ -1,18 +1,22 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  display: block;
+  place-items: center;
   max-width: 1024px;
+  margin: 0 auto;
+  overflow: auto;
   background-image: var(--background-image);
   background-color: var(--background-color);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-attachment: fixed;
-  overflow: auto;
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 }
 
 .content {
+  display: block;
   padding-inline: 20px;
 }
 
@@ -45,7 +49,7 @@
 /* Меню кнопки при активности */
 
 .header__theme-menu-button {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 18px;
   font-weight: 400;
   border: none;
@@ -56,7 +60,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--menu-color);
+  outline: 1px solid var(--button-hover-outline);
 }
 
 .header__theme-menu-button:focus-visible {
@@ -66,6 +70,7 @@
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--menu-color);
+  pointer-events: none;
 }
 
 /* Заголовок на обложке */
@@ -74,7 +79,7 @@
   display: flex;
   flex-wrap: wrap;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 700;
   align-content: center;
   color: var(--header-color);
@@ -89,11 +94,12 @@
   justify-self: end;
   align-content: center;
   margin-block-end: 3.5rem;
-  width: 491px;
+  max-width: 48%;
+  transition: 0.15s;
 }
 
 .cover__description-text {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 18px;
   font-weight: 700;
   background-color: var(--main-color);
@@ -101,7 +107,7 @@
 }
 
 .title__content-text-block {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 18px;
   font-weight: 400;
   color: var(--title-block-color);
@@ -146,7 +152,7 @@
 
 .bulb::before {
   content: "rec";
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   text-transform: uppercase;
   color: var(--main-color, #ff0070);
   font-size: 18px;
@@ -187,13 +193,17 @@
 /* Отступ между текстовым блоком */
 
 .content__text-block:not(:last-of-type) {
-  margin-block-end: 1.28rem;
+  padding-block-end: 1.265rem;
+}
+
+.content__paragraph:not(:last-of-type) {
+  padding-block-end: 1.28rem;
 }
 
 /* Блок Почему сосредоточиться так сложно */
 
 .block_why {
-  grid-template-columns: 1fr 40.5rem;
+  grid-template-columns: 1fr 66%;
 }
 
 .text__area-why div {
@@ -203,7 +213,7 @@
 /* Как концентрироваться лучше, чем золотая рыбка  */
 
 .block__how-to {
-  grid-template-columns: 1fr 40.5rem;
+  grid-template-columns: 1fr 66%;
 }
 
 .text__area-how-to h3 {
@@ -225,7 +235,7 @@
 /* Текст в блоке */
 
 .content__paragraph {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 18px;
   font-weight: 400;
   line-height: 23.4px;
@@ -235,7 +245,7 @@
 /* Заголовки блоков */
 
 .title__text-block {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 18px;
   font-weight: 700;
   color: var(--title-text-block);
@@ -243,7 +253,7 @@
 }
 
 .title__content-block {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 18px;
   font-weight: 700;
   color: var(--title-block-color);
@@ -282,8 +292,8 @@
 .gallery__image-content img {
   width: 100%;
   height: 100%;
-  /* inline-size: 100%;
-  block-size: 100%; */
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   display: block;
 }
@@ -295,36 +305,44 @@
 /* Картинка рассвета */
 
 .sunset {
-  grid-row: span 2;
-  grid-column: span 2;
+  grid-row-start: 1;
+  grid-column-end: 3;
+  grid-column-start: 1;
 }
 
 /* Мороженка */
 
 .ice-cream {
-  grid-row: span 4;
-  grid-column: span 1;
+  grid-row-start: 1;
+  grid-column-start: 3;
+  /* grid-column-end: 3; */
+  grid-row-end: 4;
 }
 
 /* Кассета */
 
 .tape {
-  grid-row: span 5;
-  grid-column: span 1;
+  grid-row-start: 2;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 1;
 }
 
 /* Книги */
 
 .books {
-  grid-row: span 2;
+  grid-row-start: 2;
   grid-column: span 1;
+  grid-row-end: 4;
 }
 
 /* Улицы города */
 
 .street {
-  grid-row: span 3;
-  grid-column: span 2;
+  grid-row-start: 4;
+  grid-row-end: 6;
+  grid-column-start: 2;
+  grid-column-end: 4;
 }
 
 /* Подвал */
@@ -342,7 +360,7 @@
   display: flex;
   flex-wrap: wrap;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 700;
   color: var(--header-color);
   text-shadow: 2px 2px var(--shadow-color);
@@ -360,7 +378,6 @@
   /* Обложка */
 
   .cover {
-    display: grid;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
@@ -369,10 +386,10 @@
     align-content: center;
     justify-content: end;
     margin-block-end: 3.1rem;
+    max-width: 47.5%;
   }
 
   .cover__description-text {
-    max-width: 364px;
     line-height: 23.4px;
   }
 
@@ -399,6 +416,10 @@
     line-height: 1.45rem;
   }
 
+  .content__text-block:not(:last-of-type) {
+    padding-block-end: 1.345rem;
+  }
+
   .section {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -415,10 +436,6 @@
 
   .block_reason {
     grid-template-columns: 1fr;
-  }
-
-  .content__text-block:not(:last-of-type) {
-    margin-block-end: 1.35rem;
   }
 
   .block_reason .title__text-block {
@@ -441,10 +458,8 @@
   /* Блок с изображениями */
 
   .gallery__image {
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
-    grid-auto-flow: row dense;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
   }
 
   .gallery__image-content {
@@ -458,42 +473,113 @@
   /* Картинка рассвета */
 
   .sunset {
-    grid-column: span 2;
-    grid-row: span 1;
+    grid-row-start: 1;
+    grid-column-end: 3;
+    grid-column-start: 1;
   }
 
   /* Мороженка */
 
   .ice-cream {
-    grid-column: span 1;
-    grid-row: span 2;
+    grid-row-start: 1;
+    grid-column-start: 3;
+    grid-row-end: 4;
   }
 
   /* Кассета */
 
   .tape {
-    grid-column: span 1;
-    grid-row: span 3;
+    grid-row-start: 2;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 1;
   }
 
   /* Книги */
 
   .books {
+    grid-row-start: 2;
     grid-column: span 1;
-    grid-row: span 1;
+    grid-row-end: 4;
   }
 
   /* Улицы города */
 
   .street {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    grid-column-start: 2;
+    grid-column-end: 4;
   }
 
   /* Подвал */
 
   .footer {
     min-height: 1024px;
+  }
+}
+
+@media (width <= 576px) {
+  .cover {
+    line-height: 0.9em;
+  }
+}
+
+@media (width <= 540px) {
+  .cover {
+    line-height: 0.9em;
+  }
+
+  .cover__description {
+    max-width: 80%;
+  }
+
+  .block_reason .title__text-block {
+    max-width: 60%;
+  }
+
+  .section {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    margin-block-end: 3.1rem;
+  }
+
+  .text__area-why {
+    grid-column: 1;
+  }
+
+  .gallery__image {
+    row-gap: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .gallery__image-content .title__content-block {
+    margin-block-end: 15px;
+  }
+
+  .sunset {
+    grid-row: span 1;
+    grid-column: var(--reset-column);
+  }
+
+  .street {
+    grid-row: span 2;
+    grid-column: var(--reset-column);
+  }
+
+  .tape {
+    grid-row: span 2;
+    grid-column: var(--reset-column);
+  }
+
+  .books {
+    grid-row: span 3;
+    grid-column: var(--reset-column);
+  }
+
+  .ice-cream {
+    grid-row: span 1;
+    grid-column: var(--reset-column);
   }
 }
 
@@ -514,13 +600,7 @@
     justify-self: center;
     margin-inline-end: 0;
     margin-block-end: 4.1rem;
-    width: 355px;
-  }
-
-  .cover__description-text {
-    font-family: "IBM Plex Mono", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
+    max-width: 95%;
   }
 
   /* Меню */
@@ -564,8 +644,15 @@
     padding-inline: 10px;
   }
 
+  .content__text-block:not(:last-of-type) {
+    padding-block-end: 1.22rem;
+  }
+
+  .content__paragraph:not(:last-of-type) {
+    padding-block-end: 1.28rem;
+  }
+
   .section {
-    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     margin-block-end: 3.1rem;
   }
@@ -581,10 +668,6 @@
   .title__content-text-block {
     color: var(--title-block-color);
     margin-block-end: 0.5rem;
-  }
-
-  .content__text-block:not(:last-of-type) {
-    margin-block-end: 1.235rem;
   }
 
   .content__paragraph {
@@ -632,38 +715,11 @@
   }
 
   .gallery__image {
-    display: grid;
     row-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
-    grid-auto-flow: dense;
   }
 
   .gallery__image-content .title__content-block {
     margin-block-end: 3vi;
-  }
-
-  .street {
-    grid-row: span 2;
-  }
-
-  .tape {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-
-  .books {
-    grid-column: span 2;
-    grid-row: span 3;
-  }
-
-  .ice-cream {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-
-  .sunset {
-    grid-row: span 2;
   }
 
   /* Подвал */
