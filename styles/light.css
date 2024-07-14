@@ -4,7 +4,7 @@
   переключая тему
 */
 
-:root.theme-light {
+.page.theme_light {
   --background-image: url(../images/cover-image-light.png);
   --background-color: rgba(255, 241, 247, 1);
   --main-font: IBM Plex mono;
@@ -17,9 +17,6 @@
   --title-text-block: #353430;
   --button-hover-outline: rgba(50, 49, 45, 0.4);
   --decorated-zone: #353430;
-}
-
-.page.theme_light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
